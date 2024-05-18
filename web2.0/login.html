@@ -20,12 +20,10 @@
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            // Simulação de validação de login
 
             var identifier = document.getElementById('identifier').value;
             var password = document.getElementById('password').value;
 
-            // Lógica de validação fictícia para demonstrar
             var validUsers = [
                 {username: 'user1', email: 'user1@example.com', password: 'password1'},
                 {username: 'user2', email: 'user2@example.com', password: 'password2'}
@@ -37,7 +35,6 @@
 
             if (isValid) {
                 alert('Login bem-sucedido!');
-                // Redirecionar para a página de sucesso ou dashboard
             } else {
                 alert('Login falhou, redirecionando para a página de cadastro.');
                 window.location.href = 'cadastro.html';
