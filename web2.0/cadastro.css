@@ -49,7 +49,7 @@ input[type="tel"] {
 input[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #45a049;
+    background-color: #ffd000;
     border: none;
     border-radius: 3px;
     color: #fff;
@@ -58,5 +58,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #4CAF50;
+    background-color: #faeb1d;
 }
