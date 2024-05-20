@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="identifier">Nome ou Email:</label>
+        <input type="text" id="identifier" name="identifier" required><br><br>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var identifier = document.getElementById('identifier').value;
+            var password = document.getElementById('password').value;
+
+            var validUsers = [
+                {username: 'user1', email: 'user1@example.com', password: 'password1'},
+                {username: 'user2', email: 'user2@example.com', password: 'password2'}
+            ];
+
+            var isValid = validUsers.some(function(user) {
+                return (user.username === identifier || user.email === identifier) && user.password === password;
+            });
+
+            if (isValid) {
+                alert('Login bem-sucedido!');
+            } else {
+                alert('Login falhou, redirecionando para a página de cadastro.');
+                window.location.href = 'cadastro.html';
+            }
+        });
+    </script>
+</body>
+</html>
