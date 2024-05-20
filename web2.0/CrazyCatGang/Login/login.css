@@ -2,19 +2,22 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
-  padding: 0;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
   flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   color: #333;
   margin-bottom: 20px;
-  position: absolute;
-  top: 170px; 
 }
 
 form {
@@ -24,7 +27,6 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 100%;
-  margin-top: -150px; 
 }
 
 label {
@@ -46,18 +48,19 @@ input[type="password"] {
 
 button {
   width: 100%;
-    padding: 10px;
-    background-color: #ffd000;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px;
+  background-color: #ffd000;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #faeb1d;
 }
+
 
 p {
   text-align: center;
@@ -72,3 +75,4 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
