@@ -1,0 +1,45 @@
+html{
+    margin: 0px;
+}
+
+.header{
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.menu li{
+    margin: 1em;
+}
+
+.image-container{
+    display: flex;
+    justify-content: center;
+    margin: 1.8em 0em 2em;
+}
+
+.image-container img{
+    border-radius: 7px;
+    max-width: 100vw;
+    min-width: 335px;
+}
+
+.rescue-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.rescue-button-container button{
+    border: solid 1px;
+    border-radius: 0.5rem;
+    margin: 1.2em 0px 1.2em;
+    padding: 1em 2.5em 1em 2.5em;
+}
+
+.rescue-button-container button:hover{
+    background-color: #f7c405;
+}
