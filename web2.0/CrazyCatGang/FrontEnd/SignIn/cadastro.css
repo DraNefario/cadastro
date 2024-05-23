@@ -24,12 +24,12 @@ h2 {
 }
 
 form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
 }
 
 label {
@@ -41,7 +41,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="tel"] { 
+input[type="tel"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -65,3 +65,43 @@ input[type="submit"]:hover {
     background-color: #faeb1d;
 }
 
+.error {
+    color: #FF5733;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.strength {
+    display: none;
+    color: #4CAF50;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.weak {
+    color: #FF5733;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.medium {
+    color: #FFA500;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.strong {
+    color: #4CAF50;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
