@@ -66,3 +66,11 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #faeb1d;
 }
+
+input:focus,
+textarea:focus {
+  border-color: #ffd000;
+  box-shadow: 0 0 5px rgba(255, 208, 0, 0.5);
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
