@@ -1,66 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
-    <style>
-     .error {
-        color: #FF5733; 
-        font-family: 'Arial', sans-serif; 
-        font-size: 14px;
-        letter-spacing: 0.5px; 
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.15); 
-       }
-
-     .strength {
-        display: none;
-        color: #4CAF50; 
-        font-family: 'Arial', sans-serif; 
-        font-size: 14px;
-        letter-spacing: 0.5px; 
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
-     }
-
-     .weak {
-        color: #FF5733; 
-        font-family: 'Arial', sans-serif; 
-        font-size: 14px;
-        letter-spacing: 0.5px; 
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.15);  
-     }
-
-     .medium {
-        color: #FFA500;
-        font-family: 'Arial', sans-serif; 
-        font-size: 14px;
-        letter-spacing: 0.5px; 
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
-      }
-
-     .strong {
-        color: #4CAF50;
-        font-family: 'Arial', sans-serif; 
-        font-size: 14px;
-        letter-spacing: 0.5px; 
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
-     }
-    </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Cadastro</h2>
         <form id="cadastroForm" action="processar_cadastro.php" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-            
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
             <label for="telefone">Telefone:</label>
             <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2}-[0-9]{4,5}-[0-9]{4}" required>
-            
+
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required>
             <span id="password-strength" class="strength">Força da senha: <span id="strength-result"></span></span>
@@ -69,7 +29,7 @@
             <label for="confirmarSenha">Confirmar senha:</label>
             <input type="password" id="confirmarSenha" name="confirmarSenha" required>
             <span id="error-message" class="error"></span><br><br>
-            
+
             <input type="submit" value="Cadastrar">
         </form>
     </div>
@@ -101,11 +61,11 @@
             }
         }
 
-        document.getElementById('senha').addEventListener('input', function() {
+        document.getElementById('senha').addEventListener('input', function () {
             var senha = this.value;
             var forca = verificarForcaSenha(senha);
             mostrarForcaSenha(forca);
-            
+
             if (senha === '') {
                 document.getElementById('password-strength').style.display = 'none';
             }
@@ -113,7 +73,7 @@
             document.getElementById('error-message').textContent = '';
         });
 
-        document.getElementById('confirmarSenha').addEventListener('input', function() {
+        document.getElementById('confirmarSenha').addEventListener('input', function () {
             var senha = document.getElementById('senha').value;
             var confirmarSenha = this.value;
             var errorMessage = document.getElementById('error-message');
@@ -129,16 +89,16 @@
             }
         });
 
-        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        document.getElementById('cadastroForm').addEventListener('submit', function (event) {
             var senha = document.getElementById('senha').value;
             var confirmarSenha = document.getElementById('confirmarSenha').value;
             var errorMessage = document.getElementById('error-message');
 
             if (senha !== confirmarSenha) {
-                event.preventDefault();  
+                event.preventDefault();
                 errorMessage.textContent = 'As senhas não coincidem!';
             } else {
-                errorMessage.textContent = '';  
+                errorMessage.textContent = '';
             }
         });
 
@@ -158,9 +118,10 @@
         }
 
         var campoTelefone = document.getElementById('telefone');
-        campoTelefone.addEventListener('input', function() {
+        campoTelefone.addEventListener('input', function () {
             formatarTelefone(this);
         });
     </script>
 </body>
+
 </html>
