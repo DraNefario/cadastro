@@ -1,9 +1,18 @@
-html{
+body{
     margin: 0px;
+}
+
+.header-container{
+    width: 100%;
+    margin: 0px;
+    background-color: #221f20;
 }
 
 .header{
     text-align: center;
+    padding: 20px;
+    color: #f7c405;
+    margin: 0px;
 }
 
 .menu {
@@ -24,7 +33,7 @@ html{
 
 .image-container img{
     border-radius: 7px;
-    max-width: 100vw;
+    max-width: 90vw;
     min-width: 335px;
 }
 
@@ -36,10 +45,14 @@ html{
 .rescue-button-container button{
     border: solid 1px;
     border-radius: 0.5rem;
-    margin: 1.2em 0px 1.2em;
-    padding: 1em 2.5em 1em 2.5em;
+    margin: 3.5em 0px 4.5em;
+    padding: 1em 2.5em 1em 2em;
 }
 
 .rescue-button-container button:hover{
     background-color: #f7c405;
+}
+
+.text{
+    margin-left: 10%;
 }
