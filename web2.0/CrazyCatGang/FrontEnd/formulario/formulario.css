@@ -3,7 +3,6 @@ body {
   background-color: #f4f4f4;
 }
 
-
 .container {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -33,22 +32,24 @@ label {
   font-weight: bold;
 }
 
-input {
+input,
+textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
 }
 
-#observações {
-  padding: 50px;
-  margin-bottom: 20px;
-}
-
-#Caracteristicas {
-  padding: 30px;
+textarea {
+  height: 100px;
+  resize: none;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  box-shadow: none;
 }
 
 input[type="submit"] {
