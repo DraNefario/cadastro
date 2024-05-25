@@ -1,81 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
-</head>
+    <link rel="stylesheet" href="login.css" />
+  </head>
 
-<body>
+  <body>
     <div class="all">
-        <div class="login100-pic" data-tilt=""
-            style="will-change: transform; transform: perspective(300px) rotateX(0deg) rotateY(0deg);">
-            <img src="images/carzycat.png" alt="IMG">
-        </div>
-        <div class="container">
-            <h1>Login</h1>
-            <form>
-                <label for="identifier">Nome ou Email:</label>
-                <input type="text" id="identifier" name="identifier" required><br>
+      <div class="login100-pic" data-tilt="">
+        <img src="images/carzycat.png" alt="IMG" />
+      </div>
+      <div class="container">
+        <h1>Login</h1>
+        <form>
+          <label for="identifier">Nome ou Email:</label>
+          <input type="text" id="identifier" name="identifier" required /><br />
 
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required><br><br>
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+          /><br /><br />
 
-                <button type="submit">Login</button>
-            </form>
-            <p>Não tem uma conta? <a href="../SignIn/cadastro.html">Cadastre-se aqui</a></p>
-        </div>
+          <button type="submit">Login</button>
+        </form>
+        <p>
+          Não tem uma conta?
+          <a href="../SignIn/cadastro.html">Cadastre-se aqui</a>
+        </p>
+      </div>
     </div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginPic = document.querySelector(".login100-pic");
+        const imagemMovel = loginPic.querySelector("img");
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const loginPic = document.querySelector('.login100-pic');
-            const imagemMovel = loginPic.querySelector('img');
+        loginPic.addEventListener("mousemove", function (event) {
+          const boundingRect = loginPic.getBoundingClientRect();
+          const centerX = boundingRect.left + boundingRect.width / 2;
+          const centerY = boundingRect.top + boundingRect.height / 2;
+          const mouseX = event.clientX - centerX;
+          const mouseY = event.clientY - centerY;
 
-            loginPic.addEventListener('mousemove', function (event) {
-                const boundingRect = loginPic.getBoundingClientRect();
-                const centerX = boundingRect.left + boundingRect.width / 2;
-                const centerY = boundingRect.top + boundingRect.height / 2;
-                const mouseX = event.clientX - centerX;
-                const mouseY = event.clientY - centerY;
+          const rotateX = (mouseY / boundingRect.height) * 10;
+          const rotateY = (-mouseX / boundingRect.width) * 10;
 
-                const rotateX = mouseY / boundingRect.height * 10;
-                const rotateY = -mouseX / boundingRect.width * 10;
-
-                imagemMovel.style.transform = `perspective(300px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.1, 1.1, 1.1)`;
-            });
-
-            loginPic.addEventListener('mouseleave', function () {
-                imagemMovel.style.transform = `perspective(300px) rotateX(0deg) rotateY(0deg) scale3d(1.1, 1.1, 1.1)`;
-            });
+          imagemMovel.style.transform = `perspective(300px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.1, 1.1, 1.1)`;
         });
 
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+        loginPic.addEventListener("mouseleave", function () {
+          imagemMovel.style.transform = `perspective(300px) rotateX(0deg) rotateY(0deg) scale3d(1.1, 1.1, 1.1)`;
+        });
+      });
 
-            var identifier = document.getElementById('identifier').value;
-            var password = document.getElementById('password').value;
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-            var validUsers = [
-                { username: 'user1', email: 'user1@example.com', password: 'password1' },
-                { username: 'user2', email: 'user2@example.com', password: 'password2' }
-            ];
+          var identifier = document.getElementById("identifier").value;
+          var password = document.getElementById("password").value;
 
-            var isValid = validUsers.some(function (user) {
-                return (user.username === identifier || user.email === identifier) && user.password === password;
-            });
+          var validUsers = [
+            {
+              username: "user1",
+              email: "user1@example.com",
+              password: "password1",
+            },
+            {
+              username: "user2",
+              email: "user2@example.com",
+              password: "password2",
+            },
+          ];
 
-            if (isValid) {
-                alert('Login bem-sucedido!');
-            } else {
-                alert('Login falhou, redirecionando para a página de cadastro.');
-                window.location.href = 'cadastro.html';
-            }
+          var isValid = validUsers.some(function (user) {
+            return (
+              (user.username === identifier || user.email === identifier) &&
+              user.password === password
+            );
+          });
+
+          if (isValid) {
+            alert("Login bem-sucedido!");
+          } else {
+            alert("Login falhou, redirecionando para a página de cadastro.");
+            window.location.href = "cadastro.html";
+          }
         });
     </script>
-</body>
-
+  </body>
 </html>
