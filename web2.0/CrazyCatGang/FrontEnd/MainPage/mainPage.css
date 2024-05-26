@@ -1,5 +1,12 @@
 body{
+    font-family: Arial, sans-serif;
     margin: 0px;
+}
+
+p{
+    margin-bottom: 1.5em;
+    margin-top: 0;
+    line-height: 1.55;
 }
 
 .header-container{
@@ -42,14 +49,15 @@ body{
     justify-content: center;
 }
 
-.rescue-button-container button{
+.rescue-button-container a{
+    text-decoration: none;
     border: solid 1px;
     border-radius: 0.5rem;
-    margin: 3.5em 0px 4.5em;
+    margin: 3.5em 0px 4.3em;
     padding: 1em 2.5em 1em 2em;
 }
 
-.rescue-button-container button:hover{
+.rescue-button-container a:hover{
     background-color: #f7c405;
 }
 
