@@ -5,6 +5,8 @@ body {
   display: flex;
   justify-content: center;
   height: 100vh;
+  background-image: url('images/degrade.png');
+  background-size: cover;
 }
 
 .all {
@@ -16,7 +18,7 @@ body {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 50px;
+  margin-top: 130px;
 }
 
 
@@ -47,9 +49,7 @@ label {
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+input {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -91,4 +91,12 @@ a:hover {
 .login100-pic {
   will-change: transform;
   transform: perspective(300px) rotateX(0deg) rotateY(0deg) scale3d(1.1, 1.1, 1.1);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ffd000;
+  box-shadow: 0 0 5px rgba(255, 208, 0, 0.5);
+  outline: none;
+  transition: all 0.3s ease-in-out;
 }
