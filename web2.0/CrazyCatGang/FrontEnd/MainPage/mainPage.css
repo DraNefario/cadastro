@@ -10,25 +10,43 @@ p{
 }
 
 .header-container{
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(2, 40px);
+    justify-items: center;
     width: 100%;
     margin: 0px;
     background-color: #221f20;
 }
 
 .header{
+    z-index: 1; 
+    grid-column: 1 / 11;
+    grid-row: 1 / 2;
     text-align: center;
     padding: 20px;
     color: #f7c405;
     margin: 0px;
 }
 
-.menu {
+.header-menu-icon {
+    grid-column: 10 / 11;
+    grid-row: 1 / 2;
+    z-index: 2;
+    padding-top: 17px; 
+}
+
+.header-menu-icon img {
+    width: 45px;
+}
+
+.help-menu {
     display: flex;
     list-style: none;
     justify-content: center;
 }
 
-.menu li{
+.help-menu li{
     margin: 1em;
 }
 
