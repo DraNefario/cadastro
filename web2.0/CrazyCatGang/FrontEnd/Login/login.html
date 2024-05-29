@@ -47,8 +47,8 @@
           const mouseX = event.clientX - centerX;
           const mouseY = event.clientY - centerY;
 
-          const rotateX = (mouseY / boundingRect.height) * 10;
-          const rotateY = (-mouseX / boundingRect.width) * 10;
+          const rotateX = (mouseY / boundingRect.height) * 20;
+          const rotateY = (-mouseX / boundingRect.width) * 20;
 
           imagemMovel.style.transform = `perspective(300px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.1, 1.1, 1.1)`;
         });
