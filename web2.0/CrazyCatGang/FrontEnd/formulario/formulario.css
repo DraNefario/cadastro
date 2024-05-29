@@ -26,6 +26,14 @@ body {
   margin-bottom: 20px;
 }
 
+.botao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
 .title-container {
   margin-bottom: 20px;
 }
@@ -89,4 +97,40 @@ textarea:focus {
   box-shadow: 0 0 5px rgba(255, 208, 0, 0.5);
   outline: none;
   transition: all 0.3s ease-in-out;
+}
+
+.btn-tooltip {
+    background-color: #faeb1d;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-tooltip::after {
+    content: attr(aria-label);
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: -90px;
+    height: -50vh;
+    position: absolute;
+    bottom: 60px;
+    left: 700%;
+    transform: translateX(-50%);
+    opacity: 0;
+    width: 200px;
+    font-size: 12px;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.btn-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
