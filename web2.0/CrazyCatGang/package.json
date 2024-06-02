@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "mongodb": "^6.6.2",
-    "mongoose": "^8.4.0"
+    "mongoose": "^8.4.0",
+    "path": "^0.12.7"
   },
   "name": "crazycatgang",
   "version": "1.0.0",

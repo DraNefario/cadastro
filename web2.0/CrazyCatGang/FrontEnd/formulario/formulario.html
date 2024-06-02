@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário de Resgate</title>
     <link rel="stylesheet" href="formulario.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
   </head>
 
   <body>
@@ -19,12 +20,12 @@
         </button>
       </div>
 
-      <form id="rescue-form">
+      <form id="rescue-form" method="post" action="/api/rescueRequests">
         <label for="nome">Nome:</label>
         <input
           type="text"
           id="nome"
-          name="nome"
+          name="name"
           required
           placeholder="Exemplo: João da Silva"
         />
@@ -42,7 +43,7 @@
         <input
           type="tel"
           id="telefone"
-          name="telefone"
+          name="phone"
           pattern="\(\d{2}\) \d{5}-\d{4}"
           required
           placeholder="Exemplo: (41) 99929-9921"
@@ -52,7 +53,7 @@
         <input
           type="text"
           id="endereco"
-          name="endereco"
+          name="address"
           required
           placeholder="Rua, Número - Bairro - Cidade/Estado - CEP"
         />
@@ -60,7 +61,7 @@
         <label for="caracteristicas">Características do Gato:</label>
         <textarea
           id="caracteristicas"
-          name="caracteristicas"
+          name="characteristics"
           rows="4"
           required
           placeholder="Exemplo: Gato amarelo e macho"
@@ -69,7 +70,7 @@
         <label for="observacoes">Observações:</label>
         <textarea
           id="observacoes"
-          name="observacoes"
+          name="observations"
           rows="4"
           required
           placeholder="Exemplo: Gato muito magro e com algumas feridas no corpo"
@@ -78,6 +79,7 @@
         <input type="submit" value="RESGATAR" />
       </form>
     </div>
+
     <script>
       function formatarTelefone(input) {
         var numeros = input.value.replace(/\D/g, "");
@@ -103,21 +105,22 @@
         formatarTelefone(this);
       });
 
-      let formData = document.getElementById("rescue-form");
-      formData.addEventListener("submit", (e) => {
-        e.preventDefault();
-        data = [
-          {
-            name: document.getElementById("nome").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("telefone").value,
-            characteristics: document.getElementById("caracteristicas").value,
-            obs: document.getElementById("observacoes").value,
-          },
-        ];
+      document
+        .getElementById("rescue-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        console.log(data);
-      });
+          const formData = new FormData(this);
+          const jsonData = JSON.stringify(Object.fromEntries(formData));
+
+          fetch("/api/rescueRequests", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: jsonData,
+          }).then((response) => response.json());
+        });
     </script>
   </body>
 </html>
