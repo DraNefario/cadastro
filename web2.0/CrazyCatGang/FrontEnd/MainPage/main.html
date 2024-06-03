@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head itemscope itemtype="http://schema.org/WebSite">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<title>Crazy Cat Gang</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Feed para Crazy Cat Gang &raquo;" href="https://crazycatgang.com.br/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Crazy Cat Gang &raquo;" href="https://crazycatgang.com.br/?feed=comments-rss2" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v8.10.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+          <script
+    src="//www.googletagmanager.com/gtag/js?id=UA-166962614-1"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+    var mi_version = '8.10.0';
+    var mi_track_user = true;
+    var mi_no_track_reason = '';
+    
+            var disableStrs = [
+                          'ga-disable-UA-166962614-1',
+              ];
+
+    /* Function to detect opted out users */
+    function __gtagTrackerIsOptedOut() {
+      for (var index = 0; index < disableStrs.length; index++) {
+        if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    /* Disable tracking if the opt-out cookie exists. */
+    if (__gtagTrackerIsOptedOut()) {
+      for (var index = 0; index < disableStrs.length; index++) {
+        window[disableStrs[index]] = true;
+      }
+    }
+
+    /* Opt-out function */
+    function __gtagTrackerOptout() {
+      for (var index = 0; index < disableStrs.length; index++) {
+        document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+        window[disableStrs[index]] = true;
+      }
+    }
+
+    if ('undefined' === typeof gaOptout) {
+      function gaOptout() {
+        __gtagTrackerOptout();
+      }
+    }
+            window.dataLayer = window.dataLayer || [];
+
+    window.MonsterInsightsDualTracker = {
+      helpers: {},
+      trackers: {},
+    };
+    if (mi_track_user) {
+      function __gtagDataLayer() {
+        dataLayer.push(arguments);
+      }
+
+      function __gtagTracker(type, name, parameters) {
+        if (!parameters) {
+          parameters = {};
+        }
+
+        if (parameters.send_to) {
+          __gtagDataLayer.apply(null, arguments);
+          return;
+        }
+
+        if (type === 'event') {
+          
+                        parameters.send_to = monsterinsights_frontend.ua;
+          __gtagDataLayer(type, name, parameters);
+                      } else {
+          __gtagDataLayer.apply(null, arguments);
+        }
+      }
+
+      __gtagTracker('js', new Date());
+      __gtagTracker('set', {
+        'developer_id.dZGIzZG': true,
+                  });
+                          __gtagTracker('config', 'UA-166962614-1', {"forceSSL":"true","link_attribution":"true"} );
+                window.gtag = __gtagTracker;										(function () {
+        /* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+        /* ga and __gaTracker compatibility shim. */
+        var noopfn = function () {
+          return null;
+        };
+        var newtracker = function () {
+          return new Tracker();
+        };
+        var Tracker = function () {
+          return null;
+        };
+        var p = Tracker.prototype;
+        p.get = noopfn;
+        p.set = noopfn;
+        p.send = function () {
+          var args = Array.prototype.slice.call(arguments);
+          args.unshift('send');
+          __gaTracker.apply(null, args);
+        };
+        var __gaTracker = function () {
+          var len = arguments.length;
+          if (len === 0) {
+            return;
+          }
+          var f = arguments[len - 1];
+          if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+            if ('send' === arguments[0]) {
+              var hitConverted, hitObject = false, action;
+              if ('event' === arguments[1]) {
+                if ('undefined' !== typeof arguments[3]) {
+                  hitObject = {
+                    'eventAction': arguments[3],
+                    'eventCategory': arguments[2],
+                    'eventLabel': arguments[4],
+                    'value': arguments[5] ? arguments[5] : 1,
+                  }
+                }
+              }
+              if ('pageview' === arguments[1]) {
+                if ('undefined' !== typeof arguments[2]) {
+                  hitObject = {
+                    'eventAction': 'page_view',
+                    'page_path': arguments[2],
+                  }
+                }
+              }
+              if (typeof arguments[2] === 'object') {
+                hitObject = arguments[2];
+              }
+              if (typeof arguments[5] === 'object') {
+                Object.assign(hitObject, arguments[5]);
+              }
+              if ('undefined' !== typeof arguments[1].hitType) {
+                hitObject = arguments[1];
+                if ('pageview' === hitObject.hitType) {
+                  hitObject.eventAction = 'page_view';
+                }
+              }
+              if (hitObject) {
+                action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+                hitConverted = mapArgs(hitObject);
+                __gtagTracker('event', action, hitConverted);
+              }
+            }
+            return;
+          }
+
+          function mapArgs(args) {
+            var arg, hit = {};
+            var gaMap = {
+              'eventCategory': 'event_category',
+              'eventAction': 'event_action',
+              'eventLabel': 'event_label',
+              'eventValue': 'event_value',
+              'nonInteraction': 'non_interaction',
+              'timingCategory': 'event_category',
+              'timingVar': 'name',
+              'timingValue': 'value',
+              'timingLabel': 'event_label',
+              'page': 'page_path',
+              'location': 'page_location',
+              'title': 'page_title',
+            };
+            for (arg in args) {
+                                if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+                hit[gaMap[arg]] = args[arg];
+              } else {
+                hit[arg] = args[arg];
+              }
+            }
+            return hit;
+          }
+
+          try {
+            f.hitCallback();
+          } catch (ex) {
+          }
+        };
+        __gaTracker.create = newtracker;
+        __gaTracker.getByName = newtracker;
+        __gaTracker.getAll = function () {
+          return [];
+        };
+        __gaTracker.remove = noopfn;
+        __gaTracker.loaded = true;
+        window['__gaTracker'] = __gaTracker;
+      })();
+              } else {
+                console.log("");
+      (function () {
+        function __gtagTracker() {
+          return null;
+        }
+
+        window['__gtagTracker'] = __gtagTracker;
+        window['gtag'] = __gtagTracker;
+      })();
+              }
+  </script>
+    <!-- / Google Analytics by MonsterInsights -->
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/crazycatgang.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.4"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+img.wp-smiley, img.emoji {
+display: inline !important;
+border: none !important;
+box-shadow: none !important;
+height: 1em !important;
+width: 1em !important;
+margin: 0 0.07em !important;
+vertical-align: -0.1em !important;
+background: none !important;
+padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://crazycatgang.com.br/wp-includes/css/dist/block-library/style.min.css?ver=6.4.4' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='blossomthemes-instagram-feed-css' href='https://crazycatgang.com.br/wp-content/plugins/blossomthemes-instagram-feed/public/css/blossomthemes-instagram-feed-public.css?ver=2.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css' href='https://crazycatgang.com.br/wp-content/plugins/blossomthemes-instagram-feed/public/css/magnific-popup.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='blossomthemes-toolkit-css' href='https://crazycatgang.com.br/wp-content/plugins/blossomthemes-toolkit/public/css/blossomthemes-toolkit-public.min.css?ver=2.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css' href='https://crazycatgang.com.br/wp-content/themes/blossom-feminine/css/owl.carousel.min.css?ver=2.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css' href='https://crazycatgang.com.br/wp-content/themes/blossom-feminine/css/animate.min.css?ver=3.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='blossom-feminine-google-fonts-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic%7CRoboto%3A700' type='text/css' media='all' />
+<link rel='stylesheet' id='blossom-feminine-style-css' href='https://crazycatgang.com.br/wp-content/themes/blossom-feminine/style.css?ver=1.3.3' type='text/css' media='all' />
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.10.0" id="monsterinsights-frontend-script-js"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/crazycatgang.com.br","hash_tracking":"false","ua":"UA-166962614-1","v4_id":""};/* ]]> */
+</script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://crazycatgang.com.br/index.php?rest_route=/" /><link rel="alternate" type="application/json" href="https://crazycatgang.com.br/index.php?rest_route=/wp/v2/pages/56" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://crazycatgang.com.br/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.4.4" />
+<link rel="canonical" href="https://crazycatgang.com.br/" />
+<link rel='shortlink' href='https://crazycatgang.com.br/' />
+<link rel="alternate" type="application/json+oembed" href="https://crazycatgang.com.br/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fcrazycatgang.com.br%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://crazycatgang.com.br/index.php?rest_route=%2Foembed%2F1.0%2Fembed&#038;url=https%3A%2F%2Fcrazycatgang.com.br%2F&#038;format=xml" />
+<link rel="icon" href="https://crazycatgang.com.br/wp-content/uploads/2020/06/cropped-1.-BlackCatFundoAmarelo-circle-copy-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://crazycatgang.com.br/wp-content/uploads/2020/06/cropped-1.-BlackCatFundoAmarelo-circle-copy-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://crazycatgang.com.br/wp-content/uploads/2020/06/cropped-1.-BlackCatFundoAmarelo-circle-copy-180x180.png" />
+<meta name="msapplication-TileImage" content="https://crazycatgang.com.br/wp-content/uploads/2020/06/cropped-1.-BlackCatFundoAmarelo-circle-copy-270x270.png" />
+<style type='text/css' media='all'>     
+.content-newsletter .blossomthemes-email-newsletter-wrapper.bg-img:after,
+.widget_blossomthemes_email_newsletter_widget .blossomthemes-email-newsletter-wrapper:after{
+    background: rgba(255, 203, 4, 0.8);    }
+
+/* primary color */
+a{
+  color: #ffcb04;
+}
+
+a:hover {
+  color: #ffcb04;
+}
+
+.secondary-nav ul li a:hover,
+.secondary-nav ul li:hover > a,
+.secondary-nav .current_page_item > a,
+.secondary-nav .current-menu-item > a,
+.secondary-nav .current_page_ancestor > a,
+.secondary-nav .current-menu-ancestor > a,
+.header-t .social-networks li a:hover,
+.main-navigation ul li a:hover,
+.main-navigation ul li:hover > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a,
+.banner .banner-text .cat-links a:hover,
+.banner .banner-text .title a:hover,
+#primary .post .text-holder .entry-header .entry-title a:hover,
+.widget ul li a:hover,
+.site-footer .widget ul li a:hover,
+.related-post .post .text-holder .cat-links a:hover,
+.related-post .post .text-holder .entry-title a:hover,
+.comments-area .comment-body .comment-metadata a:hover,
+.search #primary .search-post .text-holder .entry-header .entry-title a:hover,
+.site-title a:hover,
+.widget_bttk_popular_post ul li .entry-header .entry-meta a:hover,
+.widget_bttk_pro_recent_post ul li .entry-header .entry-meta a:hover,
+.widget_bttk_popular_post .style-two li .entry-header .cat-links a,
+.widget_bttk_pro_recent_post .style-two li .entry-header .cat-links a,
+.widget_bttk_popular_post .style-three li .entry-header .cat-links a,
+.widget_bttk_pro_recent_post .style-three li .entry-header .cat-links a,
+.widget_bttk_posts_category_slider_widget .carousel-title .title a:hover,
+.site-footer .widget_bttk_posts_category_slider_widget .carousel-title .title a:hover,
+.portfolio-sorting .button:hover,
+.portfolio-sorting .button.is-checked,
+.portfolio-item .portfolio-img-title a:hover,
+.portfolio-item .portfolio-cat a:hover,
+.entry-header .portfolio-cat a:hover{
+    color: #ffcb04;
+}
+
+.category-section .col .img-holder .text-holder,
+.pagination a{
+    border-color: #ffcb04;
+}
+
+.category-section .col .img-holder .text-holder span,
+#primary .post .text-holder .entry-footer .btn-readmore:hover,
+.pagination a:hover,
+.widget_calendar caption,
+.widget_calendar table tbody td a,
+.widget_tag_cloud .tagcloud a:hover,
+#blossom-top,
+.single #primary .post .entry-footer .tags a:hover,
+.error-holder .page-content a:hover,
+.widget_bttk_author_bio .readmore:hover,
+.widget_bttk_social_links ul li a:hover,
+.widget_bttk_image_text_widget ul li .btn-readmore:hover,
+.widget_bttk_custom_categories ul li a:hover .post-count,
+.content-instagram ul li .instagram-meta .like,
+.content-instagram ul li .instagram-meta .comment,
+#secondary .widget_blossomtheme_featured_page_widget .text-holder .btn-readmore:hover,
+#secondary .widget_blossomtheme_companion_cta_widget .btn-cta:hover,
+#secondary .widget_bttk_icon_text_widget .text-holder .btn-readmore:hover,
+.site-footer .widget_blossomtheme_companion_cta_widget .btn-cta:hover,
+.site-footer .widget_blossomtheme_featured_page_widget .text-holder .btn-readmore:hover,
+.site-footer .widget_bttk_icon_text_widget .text-holder .btn-readmore:hover{
+    background: #ffcb04;
+}
+
+.pagination .current,
+.post-navigation .nav-links .nav-previous a:hover,
+.post-navigation .nav-links .nav-next a:hover{
+    background: #ffcb04;
+    border-color: #ffcb04;
+}
+
+#primary .post .entry-content blockquote,
+#primary .page .entry-content blockquote{
+    border-bottom-color: #ffcb04;
+    border-top-color: #ffcb04;
+}
+
+#primary .post .entry-content .pull-left,
+#primary .page .entry-content .pull-left,
+#primary .post .entry-content .pull-right,
+#primary .page .entry-content .pull-right{border-left-color: #ffcb04;}
+
+.error-holder .page-content h2{
+    text-shadow: 6px 6px 0 #ffcb04;
+}
+
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea{
+    font-family : Roboto;
+    font-size   : 16px;
+}
+
+.resgate{
+  position: relative;
+  left: 446px;
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: #ffcb04;
+  border: none;
+  border-radius: 4px;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resgate:hover {
+  background-color: #faeb1d;
+}
+
+
+#primary .post .entry-content blockquote cite,
+#primary .page .entry-content blockquote cite {
+    font-family : Roboto;
+}
+
+.banner .banner-text .title,
+#primary .sticky .text-holder .entry-header .entry-title,
+#primary .post .text-holder .entry-header .entry-title,
+.author-section .text-holder .title,
+.post-navigation .nav-links .nav-previous .post-title,
+.post-navigation .nav-links .nav-next .post-title,
+.related-post .post .text-holder .entry-title,
+.comments-area .comments-title,
+.comments-area .comment-body .fn,
+.comments-area .comment-reply-title,
+.page-header .page-title,
+#primary .post .entry-content blockquote,
+#primary .page .entry-content blockquote,
+#primary .post .entry-content .pull-left,
+#primary .page .entry-content .pull-left,
+#primary .post .entry-content .pull-right,
+#primary .page .entry-content .pull-right,
+#primary .post .entry-content h1,
+#primary .page .entry-content h1,
+#primary .post .entry-content h2,
+#primary .page .entry-content h2,
+#primary .post .entry-content h3,
+#primary .page .entry-content h3,
+#primary .post .entry-content h4,
+#primary .page .entry-content h4,
+#primary .post .entry-content h5,
+#primary .page .entry-content h5,
+#primary .post .entry-content h6,
+#primary .page .entry-content h6,
+.search #primary .search-post .text-holder .entry-header .entry-title,
+.error-holder .page-content h2,
+.widget_bttk_author_bio .title-holder,
+.widget_bttk_popular_post ul li .entry-header .entry-title,
+.widget_bttk_pro_recent_post ul li .entry-header .entry-title,
+.widget_bttk_posts_category_slider_widget .carousel-title .title,
+.content-newsletter .blossomthemes-email-newsletter-wrapper .text-holder h3,
+.widget_blossomthemes_email_newsletter_widget .blossomthemes-email-newsletter-wrapper .text-holder h3,
+#secondary .widget_bttk_testimonial_widget .text-holder .name,
+#secondary .widget_bttk_description_widget .text-holder .name,
+.site-footer .widget_bttk_description_widget .text-holder .name,
+.site-footer .widget_bttk_testimonial_widget .text-holder .name,
+.portfolio-text-holder .portfolio-img-title,
+.portfolio-holder .entry-header .entry-title,
+.single-blossom-portfolio .post-navigation .nav-previous a,
+.single-blossom-portfolio .post-navigation .nav-next a,
+.related-portfolio-title{
+    font-family: Roboto;
+}
+
+.site-title{
+    font-size   : 52px;
+    font-family : Roboto;
+    font-weight : 700;
+    font-style  : normal;
+}
+
+           
+</style>
+</head>
+
+<body class="home page-template-default page page-id-56 rightsidebar elementor-default elementor-kit-" itemscope itemtype="http://schema.org/WebPage">
+
+<div id="page" class="site"><a aria-label="skip to content" class="skip-link" href="#content">Pular para o conteúdo</a>
+    <header id="masthead" class="site-header wow fadeIn" data-wow-delay="0.1s" itemscope itemtype="http://schema.org/WPHeader">
+
+<div class="header-t">
+  <div class="container">
+
+            
+            <nav id="secondary-navigation" class="secondary-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                          
+        </nav><!-- #secondary-navigation -->
+            
+    <div class="right">
+      <div class="tools">
+        <div class="form-section">
+          <button aria-label="search toggle button" id="btn-search">
+                            <i class="fas fa-search"></i>
+                        </button>
+          <div class="form-holder">
+            <form role="search" method="get" class="search-form" action="https://crazycatgang.com.br/">
+    <label>
+      <span class="screen-reader-text">Pesquisar por:</span>
+      <input type="search" class="search-field" placeholder="Pesquisar &hellip;" value="" name="s" />
+    </label>
+    <input type="submit" class="search-submit" value="Pesquisar" />
+  </form>							</div>
+        </div>
+                              
+      </div>
+                
+          <ul class="social-networks">
+              <li><a href="https://www.instagram.com/crazycatgang/" target="_blank" rel="nofollow"><i class="ins"></i></a></li>    	   
+                    <li><a href="https://www.facebook.com/crazycatgang" target="_blank" rel="nofollow"><i class="facebook"></i></a></li>    	   
+          </ul>
+                    
+    </div>
+            
+  </div>
+</div><!-- .header-t -->
+    
+<div class="header-m site-branding">
+  <div class="container" itemscope itemtype="http://schema.org/Organization">
+                        <h1 class="site-title" itemprop="name"><a href="https://crazycatgang.com.br/" rel="home" itemprop="url">Crazy Cat Gang</a></h1>
+                      </div>
+</div><!-- .header-m -->
+    
+<div class="header-b">
+  <div class="container">
+    <button aria-label="primary menu toggle button" id="primary-toggle-button"><i class="fa fa-bars"></i>Navegação</button>
+    <nav id="site-navigation" class="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <div class="menu-menu-do-meio-container"><ul id="primary-menu" class="menu"><li id="menu-item-1560" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://crazycatgang.com.br/?page_id=2">Blog</a></li>
+<li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1564"><a href="https://crazycatgang.com.br/?p=707">Como posso ajudar a CCG?</a></li>
+<li id="menu-item-1561" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://crazycatgang.com.br/?page_id=17">Quero ser voluntário</a></li>
+<li id="menu-item-1562" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1562"><a href="https://crazycatgang.com.br/?p=1394">Quero ser Lar Temporário</a></li>
+<li id="menu-item-1563" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1563"><a href="https://crazycatgang.com.br/?p=788">Perguntas frequentes</a></li>
+</ul></div>        		</nav><!-- #site-navigation -->                
+  </div>
+</div><!-- .header-b -->
+    
+</header><!-- #masthead -->
+    <div class="container main-content">
+            <div id="content" class="site-content">
+        <div class="row">
+
+<div id="primary" class="content-area">
+<main id="main" class="site-main">
+<button class="resgate">Resgate um Gato!</button>
+  
+<article id="post-56" class="post-56 page type-page status-publish has-post-thumbnail hentry">
+
+<div class="post-thumbnail"><img width="1020" height="386" src="https://crazycatgang.com.br/wp-content/uploads/2020/02/ALTA-Capa-Facebook2.png" class="attachment-blossom-feminine-with-sidebar size-blossom-feminine-with-sidebar wp-post-image" alt="ONG Adoção de gatinhos Curitiba" decoding="async" fetchpriority="high" srcset="https://crazycatgang.com.br/wp-content/uploads/2020/02/ALTA-Capa-Facebook2.png 1600w, https://crazycatgang.com.br/wp-content/uploads/2020/02/ALTA-Capa-Facebook2-300x113.png 300w, https://crazycatgang.com.br/wp-content/uploads/2020/02/ALTA-Capa-Facebook2-1024x387.png 1024w, https://crazycatgang.com.br/wp-content/uploads/2020/02/ALTA-Capa-Facebook2-768x290.png 768w, https://crazycatgang.com.br/wp-content/uploads/2020/02/ALTA-Capa-Facebook2-1536x581.png 1536w, https://crazycatgang.com.br/wp-content/uploads/2020/02/ALTA-Capa-Facebook2-1140x431.png 1140w" sizes="(max-width: 1020px) 100vw, 1020px" /></div>    
+<div class="text-holder">
+     
+<div class="entry-content" itemprop="text">
+<div class="text">
+<p>Quem chegou até aqui deve estar se perguntando, do que se trata essa ong? Pois bem, somos um ONG formada majoritariamente por mulheres, e que busca instruir a sociedade em relação ao abandono, cuidados com os felinos e etc.<br><br>Resgatar é uma das nossas frentes, mas acreditamos que sem instruir, ajudar e atuar nas comunidades, o número de abandono e o número de animais de rua nunca será reduzido.<br><br>Assim como uma grande empresa, a ONG busca ser organizada e através de processos de gestão, coordenar e expandir a nossa atuação na cidade de Curitiba.<br><br>Sempre nos dizem que somos burocráticos, mas é com organização, processos e comprometimento que as coisas funcionam.<br><br>Quer nos ajudar? Faça uma doação de qualquer valor para o <strong>PIX da ong: ccgcwb@gmail.com</strong><br><br>Tem uma empresa e quer doar para uma ong séria e que faz um super trabalho social em Curitiba?<br><br>Escreva para parceria@crazycatgang.com.br</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>Nossos gatinhos agradecem!</strong></p>
+
+
+
+<p><br><br></p>
+</div>	</div><!-- .entry-content -->      
+    <footer class="entry-footer">
+  </footer><!-- .entry-footer home-->
+    </div><!-- .text-holder -->
+</article><!-- #post-56 -->
+
+</main><!-- #main -->
+</div><!-- #primary -->
+
+
+<aside id="secondary" class="widget-area" itemscope itemtype="http://schema.org/WPSideBar">
+<section id="btif_instagram_widget-4" class="widget widget_btif_instagram_widget"><h2 class="widget-title" itemprop="name">Gatinhos para adoção:</h2>
+<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<ul class="popup-gallery photos-2">
+</ul>
+
+<a class="profile-link" href="https://www.instagram.com/crazycatgang" target="_blank" rel="noreferrer">
+<span class="insta-icon"><i class="fab fa-instagram"></i></span>Clique Aqui e acesse nosso Instagram para ver os barrigudinhos disponíveis.</a>
+
+</section><section id="bttk_facebook_page_widget-4" class="widget widget_bttk_facebook_page_widget">        <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <div class="bttk-facebook-page-box">
+    <h2 class="widget-title" itemprop="name">Siga nosso Facebook:</h2>        <div class="fb-page" data-href="https://www.facebook.com/crazycatgang" data-height="400" data-hide-cover="false" data-show-facepile="1" data-small-header="false" data-tabs="timeline, messages" ></div>
+    </div>        
+    </section><section id="categories-7" class="widget widget_categories"><h2 class="widget-title" itemprop="name">Categorias</h2>
+  <ul>
+      <li class="cat-item cat-item-76"><a href="https://crazycatgang.com.br/?cat=76">Adoção</a>
+</li>
+<li class="cat-item cat-item-20"><a href="https://crazycatgang.com.br/?cat=20">Blog</a>
+</li>
+<li class="cat-item cat-item-5"><a href="https://crazycatgang.com.br/?cat=5">Comportamento</a>
+</li>
+<li class="cat-item cat-item-21"><a href="https://crazycatgang.com.br/?cat=21">Food</a>
+</li>
+<li class="cat-item cat-item-127"><a href="https://crazycatgang.com.br/?cat=127">Indicação</a>
+</li>
+<li class="cat-item cat-item-138"><a href="https://crazycatgang.com.br/?cat=138">Parcerias</a>
+</li>
+<li class="cat-item cat-item-4"><a href="https://crazycatgang.com.br/?cat=4">Resgate</a>
+</li>
+<li class="cat-item cat-item-1"><a href="https://crazycatgang.com.br/?cat=1">Trabalho</a>
+</li>
+  </ul>
+
+  </section></aside><!-- #secondary -->
+        </div><!-- .row/not-found -->
+    </div><!-- #content -->
+        </div><!-- .container/.main-content -->
+    <footer id="colophon" class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+
+<div class="footer-t">
+<div class="container">
+  <div class="row column-2">
+                        <div class="col">
+               <section id="nav_menu-1" class="widget widget_nav_menu"><h2 class="widget-title" itemprop="name">CCG</h2><div class="menu-menu-topo-em-preto-container"><ul id="menu-menu-topo-em-preto" class="menu"><li id="menu-item-862" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-862"><a href="https://crazycatgang.com.br/" aria-current="page">Página Inicial</a></li>
+<li id="menu-item-1519" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1519"><a href="https://crazycatgang.com.br/?page_id=2">Blog</a></li>
+<li id="menu-item-844" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-844"><a href="https://crazycatgang.com.br/?p=707">Como posso ajudar?</a></li>
+<li id="menu-item-846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-846"><a href="https://www.instagram.com/crazycatgang/">Gatinhos para adoção</a></li>
+<li id="menu-item-850" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-850"><a href="https://crazycatgang.com.br/?p=788">Perguntas frequentes</a></li>
+<li id="menu-item-1571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1571"><a href="https://www.instagram.com/crazycatgang/">Instagram</a></li>
+<li id="menu-item-1572" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1572"><a href="https://www.facebook.com/crazycatgang">Facebook</a></li>
+</ul></div></section> 
+            </div>
+                        <div class="col">
+               
+<section id="recent-posts-5" class="widget widget_recent_entries">
+<h2 class="widget-title" itemprop="name">Posts recentes</h2>
+<ul>
+                  <li>
+      <a href="https://crazycatgang.com.br/?p=1482">Esporotricose &#8211; Atenção para essa  Zoonose</a>
+              </li>
+                  <li>
+      <a href="https://crazycatgang.com.br/?p=1451">Tratamento de fungo. Como fazer?</a>
+              </li>
+                  <li>
+      <a href="https://crazycatgang.com.br/?p=1436">Não precisa dar banho em gato, ta bom?</a>
+              </li>
+                  <li>
+      <a href="https://crazycatgang.com.br/?p=1419">Como cuidar de um gatinho com FELV +</a>
+              </li>
+      </ul>
+
+</section> 
+            </div>
+                    </div>
+</div>
+</div>
+    <div class="site-info">
+<div class="container">
+  <span class="copyright">2024 Direitos autorais  <a href="https://crazycatgang.com.br/">Crazy Cat Gang</a>. </span>Blossom Feminine | Desenvolvido por <a href="https://blossomthemes.com/" rel="nofollow" target="_blank">Blossom Themes</a>.Desenvolvido por <a href="https://br.wordpress.org/" target="_blank">WordPress</a>.                    
+</div>
+</div>
+    </footer><!-- #colophon -->
+    <button aria-label="go to top button" id="blossom-top">
+<span><i class="fa fa-angle-up"></i>SUPERIOR</span>
+</button>
+    </div><!-- #page -->
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/plugins/blossomthemes-instagram-feed/public/js/blossomthemes-instagram-feed-public.js?ver=2.0.3" id="blossomthemes-instagram-feed-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/plugins/blossomthemes-instagram-feed/public/js/jquery.magnific-popup.min.js?ver=1.0.0" id="magnific-popup-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/plugins/blossomthemes-toolkit/public/js/isotope.pkgd.min.js?ver=3.0.5" id="isotope-pkgd-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-includes/js/masonry.min.js?ver=4.2.2" id="masonry-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/plugins/blossomthemes-toolkit/public/js/blossomthemes-toolkit-public.min.js?ver=2.2.3" id="blossomthemes-toolkit-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/plugins/blossomthemes-toolkit/public/js/fontawesome/all.min.js?ver=6.1.1" id="all-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/plugins/blossomthemes-toolkit/public/js/fontawesome/v4-shims.min.js?ver=6.1.1" id="v4-shims-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/themes/blossom-feminine/js/sticky-kit.min.js?ver=1.1.3" id="sticky-kit-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/themes/blossom-feminine/js/owl.carousel.min.js?ver=2.2.1" id="owl-carousel-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/themes/blossom-feminine/js/owl.carousel.aria.min.js?ver=2.0.0" id="owl-carousel-aria-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/themes/blossom-feminine/js/jquery.matchHeight.min.js?ver=0.7.2" id="jquery-matchHeight-js"></script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/themes/blossom-feminine/js/wow.min.js?ver=1.1.3" id="wow-js"></script>
+<script type="text/javascript" id="blossom-feminine-custom-js-extra">
+/* <![CDATA[ */
+var blossom_feminine_data = {"rtl":"","animation":"fadeOutLeft","auto":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://crazycatgang.com.br/wp-content/themes/blossom-feminine/js/custom.min.js?ver=1.3.3" id="blossom-feminine-custom-js"></script>
+
+</body>
+</html>
