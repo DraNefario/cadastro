@@ -108,8 +108,8 @@
       document
         .getElementById("rescue-form")
         .addEventListener("submit", function (e) {
-          const formData = new FormData(this);
-          const jsonData = JSON.stringify(Object.fromEntries(formData));
+          const rescueFormData = new FormData(this);
+          const jsonData = JSON.stringify(Object.fromEntries(rescueFormData));
 
           fetch("/api/rescueRequests", {
             method: "POST",

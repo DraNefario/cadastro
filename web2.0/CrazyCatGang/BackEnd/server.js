@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, '../', 'FrontEnd', 'formulario')));
+app.use(express.static(path.join(__dirname, '../', 'FrontEnd', 'SignIn')));
 
 // Connect to MongoDB
 mongoose.connect("mongodb+srv://admin:8zmSR64N8UmtVEhT@clusterccg.yjs1evk.mongodb.net/cats?retryWrites=true&w=majority&appName=ClusterCCG", { useNewUrlParser: true, useUnifiedTopology: true })
@@ -28,21 +29,63 @@ const rescueRequestSchema = new mongoose.Schema({
     observations: { type: String, required: true },
 });
 
+const userSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    phone: { type: String, required: true },
+    password: { type: String, required: true },
+});
+
 // Define a model
-const FormData = mongoose.model('RescueRequest', rescueRequestSchema);
+const RescueFormData = mongoose.model('RescueRequest', rescueRequestSchema);
+const UserFormData = mongoose.model('Users', userSchema);
+
 
 // Serve the HTML form
-app.get('/', (req, res) => {
+app.get('/rescueRequests', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'FrontEnd', 'formulario', 'formulario.html'));
+});
+
+app.get('/signIn', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'FrontEnd', 'SignIn', 'cadastro.html'));
+});
+
+app.get('/success', (req, res) => {
+    res.sendFile(path.join(__dirname, 'formSavedSuccessfully', 'success.html'));
+});
+
+// Handle form submission
+app.post('/api/signIn', async (req, res) => {
+    const { name, email, phone, password, pass} = req.body;
+    const userFormData = new UserFormData({ name, email, phone, password });
+
+    try {
+        const count = await UserFormData.countDocuments({ email: { $eq: email } });
+
+        if (count <= 0) {
+            await userFormData.save();
+            res.redirect('/success')
+        } else {
+            res.send(`
+                <script>
+                    alert('Email em uso!');
+                    window.location.href = '/';
+                </script>
+            `)
+            
+        }
+    } catch (err) {
+        res.status(500).json({ message: 'Error saving data: ' + err.message });
+    }
 });
 
 // Handle form submission
 app.post('/api/rescueRequests', async (req, res) => {
     const { name, email, phone, address, characteristics, observations } = req.body;
-    const formData = new FormData({ name, email, phone, address, characteristics, observations });
+    const rescueFormData = new RescueFormData({ name, email, phone, address, characteristics, observations });
 
     try {
-        await formData.save();
+        await rescueFormData.save();
         res.json({ message: 'Data saved successfully!' });
     } catch (err) {
         res.status(500).json({ message: 'Error saving data: ' + err.message });
