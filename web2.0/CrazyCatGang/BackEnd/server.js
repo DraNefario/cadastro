@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const app = express();
 const port = 3000;
@@ -10,7 +12,7 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Serve static files from the "public" directory
+// Serve static files
 app.use(express.static(path.join(__dirname, '../', 'FrontEnd', 'formulario')));
 app.use(express.static(path.join(__dirname, '../', 'FrontEnd', 'SignIn')));
 
@@ -19,7 +21,7 @@ mongoose.connect("mongodb+srv://admin:8zmSR64N8UmtVEhT@clusterccg.yjs1evk.mongod
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Failed to connect to MongoDB', err));
 
-// Define a schema
+// Define schemas
 const rescueRequestSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
@@ -36,10 +38,9 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
 });
 
-// Define a model
+// Models
 const RescueFormData = mongoose.model('RescueRequest', rescueRequestSchema);
-const UserFormData = mongoose.model('Users', userSchema);
-
+const UserFormData = mongoose.model('User', userSchema);
 
 // Serve the HTML form
 app.get('/rescueRequests', (req, res) => {
@@ -54,37 +55,38 @@ app.get('/success', (req, res) => {
     res.sendFile(path.join(__dirname, 'formSavedSuccessfully', 'success.html'));
 });
 
-// Handle form submission
+// Handle user registration
 app.post('/api/signIn', async (req, res) => {
-    const { name, email, phone, password, pass} = req.body;
-    const userFormData = new UserFormData({ name, email, phone, password });
+    const { name, email, phone, password } = req.body;
 
     try {
-        const count = await UserFormData.countDocuments({ email: { $eq: email } });
+        const userCount = await UserFormData.countDocuments({ email });
 
-        if (count <= 0) {
-            await userFormData.save();
-            res.redirect('/success')
-        } else {
-            res.send(`
+        if (userCount > 0) {
+            return res.send(`
                 <script>
                     alert('Email em uso!');
-                    window.location.href = '/';
+                    window.location.href = '/signIn';
                 </script>
-            `)
-            
+            `);
         }
+
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+        const userFormData = new UserFormData({ name, email, phone, password: hashedPassword });
+        
+        await userFormData.save();
+        res.redirect('/success');
     } catch (err) {
         res.status(500).json({ message: 'Error saving data: ' + err.message });
     }
 });
 
-// Handle form submission
+// Handle rescue request submission
 app.post('/api/rescueRequests', async (req, res) => {
     const { name, email, phone, address, characteristics, observations } = req.body;
-    const rescueFormData = new RescueFormData({ name, email, phone, address, characteristics, observations });
 
     try {
+        const rescueFormData = new RescueFormData({ name, email, phone, address, characteristics, observations });
         await rescueFormData.save();
         res.json({ message: 'Data saved successfully!' });
     } catch (err) {

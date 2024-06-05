@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <h2>Cadastro</h2>
-      <form id="cadastroForm" action="/api/signIn" method="post">
+      <form id="cadastroForm">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="name" required />
 
@@ -126,25 +126,41 @@
       document
         .getElementById("cadastroForm")
         .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var senha = document.getElementById("senha").value;
+          var confirmarSenha = document.getElementById("confirmarSenha").value;
+          var errorMessage = document.getElementById("error-message");
+
+          if (senha !== confirmarSenha) {
+            errorMessage.textContent = "As senhas não coincidem!";
+            return;
+          } else {
+            errorMessage.textContent = "";
+          }
+
           const cadastroFormData = new FormData(this);
           const jsonData = JSON.stringify(
             Object.fromEntries(cadastroFormData.entries())
           );
 
-          if (senha !== confirmarSenha) {
-            event.preventDefault();
-            errorMessage.textContent = "As senhas não coincidem!";
-          } else {
-            errorMessage.textContent = "";
-
-            fetch("/api/signIn", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: jsonData,
-            }).then((response) => response.json());
-          }
+          fetch("/api/signIn", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: jsonData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                alert("Cadastro realizado com sucesso!");
+              } else {
+                alert("Erro no cadastro: " + data.message);
+              }
+            })
+            .catch((error) => {
+              alert("Erro ao enviar dados: " + error.message);
+            });
         });
     </script>
   </body>
