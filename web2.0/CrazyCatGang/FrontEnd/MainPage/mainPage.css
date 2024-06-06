@@ -35,7 +35,7 @@ p{
 .retangulo {
     width: 90%;
     height: 4%;
-    background-color: rgba(255, 255, 255, 0.20);
+    background-color: rgba(251, 198, 5, 0.90);
     border-radius: 10px;
     position: absolute;
     z-index: -1;
@@ -47,7 +47,7 @@ p{
 .retangulo2 {
     width: 90%;
     height: 45%;
-    background-color: rgba(255, 255, 255, 0.20);
+    background-color: rgba(251, 198, 5, 0.15);
     border-radius: 10px;
     position: absolute;
     z-index: -1;
@@ -122,9 +122,23 @@ p{
 }
 
 .text{
-    margin-left: 10%;
+    margin-left: 7%;
+    max-width: 1050px;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, li, a {
     color: black
+}
+@media (max-width: 1700px){
+    .retangulo2 {
+        width: 90%;
+        height: 48%;
+        background-color: rgba(251, 198, 5, 0.15);
+        border-radius: 10px;
+        position: absolute;
+        z-index: -1;
+        top: 78%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
