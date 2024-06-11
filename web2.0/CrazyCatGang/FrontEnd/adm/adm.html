@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="adm.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div>
+      <h1>Página Adimin</h1>
+      <table id="requests-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Descrição Gato</th>
+            <th>Observações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
 
-        <h1>pagina adm</h1>
-        <table>
-        <tr>
-            <td>jose carlos</td>
-            <td>josecarlos@gmail.com</td>
-            <td>75656564746</td>
-            <td>gato mt burro prensdeu a cabeça num pote</td>
-            <td>rua mil pau</td>
-            <td>gato laranja</td>
-        </tr>
-    </table>
-
-
+      <a href="http://127.0.0.1:5500/FrontEnd/MainPage/mainPage.html"
+        ><button>Voltar</button>
+      </a>
     </div>
-</body>
 
+    <script>
+      fetch("api/rescueRequests")
+        .then((res) => res.json())
+        .then((data) => {
+          const tableBody = document
+            .getElementById("requests-table")
+            .querySelector("tbody");
+
+          data.forEach((item) => {
+            let row = document.createElement("tr");
+
+            row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.email}</td>
+            <td>${item.phone}</td>
+            <td>${item.address}</td>
+            <td>${item.characteristics}</td>
+            <td>${item.observations}</td>`;
+
+            tableBody.appendChild(row);
+          });
+        })
+        .catch((err) => {
+          console.log("Erro ao carregar dados: ", error);
+        });
+    </script>
+  </body>
 </html>

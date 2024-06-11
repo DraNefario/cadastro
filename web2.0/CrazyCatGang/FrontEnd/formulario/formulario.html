@@ -75,18 +75,18 @@
           required
           placeholder="Exemplo: Gato muito magro e com algumas feridas no corpo"
         ></textarea>
-          <iframe
-            id="mapa"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230483.6122621548!2d-49.45209435109254!3d-25.494824579221138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3f5fc090ff1%3A0x3c7a83b0092bb747!2sCuritiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1717609266903!5m2!1spt-BR!2sbr"
-            width="400"
-            height="150"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        <br>
-        <br>
+        <iframe
+          id="mapa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230483.6122621548!2d-49.45209435109254!3d-25.494824579221138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3f5fc090ff1%3A0x3c7a83b0092bb747!2sCuritiba%20-%20PR!5e0!3m2!1spt-BR!2sbr!4v1717609266903!5m2!1spt-BR!2sbr"
+          width="400"
+          height="150"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <br />
+        <br />
         <input type="submit" value="RESGATAR" />
       </form>
     </div>
@@ -116,20 +116,34 @@
         formatarTelefone(this);
       });
 
-      document
-        .getElementById("rescue-form")
-        .addEventListener("submit", function (e) {
-          const rescueFormData = new FormData(this);
-          const jsonData = JSON.stringify(Object.fromEntries(rescueFormData));
+      document.getElementById("rescue-form").addEventListener("submit", (e) => {
+        const submitButton = e.target.querySelector('input[type="submit"]');
+        submitButton.disabled = true;
 
-          fetch("/api/rescueRequests", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: jsonData,
-          }).then((response) => response.json());
-        });
+        const rescueFormData = new FormData(this);
+        const jsonData = JSON.stringify(Object.fromEntries(rescueFormData));
+
+        fetch("/api/rescueRequests", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: jsonData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            alert("Formulário enviado com sucesso!");
+            submitButton.disabled = false; // Re-enable after successful submission
+          })
+          .catch((error) => {
+            console.error("Erro ao enviar o formulário:", error);
+            alert(
+              "Houve um problema ao enviar o formulário. Tente novamente mais tarde."
+            );
+            submitButton.disabled = false; // Re-enable after error
+          });
+      });
     </script>
   </body>
 </html>
