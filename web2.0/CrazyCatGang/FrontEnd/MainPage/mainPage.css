@@ -3,6 +3,7 @@ body{
     margin: 0px;
     position: relative;
     margin-bottom: 50px;
+    overflow-y:hidden;
 }
 
 a {
